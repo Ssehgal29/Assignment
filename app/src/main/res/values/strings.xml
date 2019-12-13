@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Assignment</string>
+    <string name="user_name">User Name</string>
+    <string name="user_address">User Address</string>
+    <string name="user_rides">Rides</string>
+    <string name="user_free_rides">Free Rides</string>
+    <string name="user_credits">Credits</string>
+    <string name="default_value">Default</string>
+    <string name="past_trips">Past Trips</string>
+    <string name="see_all_trips">See All</string>
+    <string name="boarding_station_name">Boarding Station Name</string>
+    <string name="departure_station_name">Departure Station Name</string>
+    <string name="boarding_time">Boarding Time</string>
+    <string name="departure_time">Departure Time</string>
+    <string name="total_amount">Total</string>
+    <string name="travel_time">Travel Time</string>
+    <string name="travel_amount">$ 16</string>
+</resources>
