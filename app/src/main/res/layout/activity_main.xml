@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -17,7 +18,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/colorPrimary"
                 >
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -34,41 +37,59 @@
                             android:background="@drawable/user"/>
 
                         <TextView
-                            android:id="@+id/user_name"
+                            android:id="@+id/user_firstName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_name"
-                            android:textSize="30dp"
-                            android:textColor="@color/colorPrimary"
-                            android:textStyle="bold|italic"
+                            android:text="@string/user_firstName"
+                            android:textSize="25sp"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
                             android:layout_toRightOf="@+id/user_image"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
                             />
+
                         <TextView
-                            android:id="@+id/user_address"
+                            android:id="@+id/user_lastName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_address"
-                            android:textColor="@color/colorPrimary"
-                            android:textStyle="italic"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@+id/user_firstName"
+                            android:text="@string/user_lastName"
+                            android:textColor="@color/textColor"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/user_city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_city"
+                            android:textColor="@color/textColor"
                             android:textSize="15dp"
                             android:layout_toRightOf="@+id/user_image"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="60dp"
                             />
-                    </RelativeLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="25dp">
 
+                        <TextView
+                            android:id="@+id/user_country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="60dp"
+                            android:layout_toRightOf="@+id/user_city"
+                            android:text="@string/user_country"
+                            android:textColor="@color/textColor"
+                            android:textSize="15dp"
+                            />
+                    </RelativeLayout>
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="25dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp">
 
@@ -78,8 +99,9 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
+                                android:gravity="center"
                                 android:text="@string/user_rides"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@color/textColor"
                                 android:textSize="15dp"
                                 android:textStyle="bold" />
 
@@ -89,24 +111,26 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentTop="true"
                                 android:text="@string/default_value"
-                                android:textColor="@color/colorPrimary"
+                                android:gravity="center"
+                                android:textColor="@color/textColor"
                                 android:layout_marginTop="25dp"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
-                                android:textSize="20dp" />
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/txt_free_rides"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentTop="true"
-                                android:layout_marginLeft="90dp"
+                                android:layout_marginLeft="150dp"
                                 android:layout_marginTop="0dp"
-                                android:layout_toRightOf="@+id/txt_user_rides"
+                                android:layout_alignParentLeft="true"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
+                                android:gravity="center"
                                 android:text="@string/user_free_rides"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@color/textColor"
                                 android:textSize="15dp"
                                 android:textStyle="bold" />
 
@@ -114,26 +138,28 @@
                                 android:id="@+id/free_rides"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="62dp"
+                                android:layout_marginLeft="150dp"
                                 android:layout_marginTop="25dp"
-                                android:layout_toRightOf="@+id/user_rides"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
                                 android:text="@string/default_value"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20dp" />
+                                android:textColor="@color/textColor"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/txt_credits"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentTop="true"
-                                android:layout_marginLeft="76dp"
-                                android:layout_toRightOf="@+id/txt_free_rides"
+                                android:layout_marginLeft="300dp"
+                                android:layout_alignParentLeft="true"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
+                                android:gravity="center"
                                 android:text="@string/user_credits"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@color/textColor"
                                 android:textSize="15dp"
                                 android:textStyle="bold" />
 
@@ -141,16 +167,16 @@
                                 android:id="@+id/credits"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="80dp"
+                                android:layout_marginLeft="300dp"
                                 android:layout_marginTop="25dp"
-                                android:layout_toRightOf="@+id/free_rides"
-                                android:paddingLeft="10dp"
+                                android:layout_alignParentLeft="true"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
                                 android:text="@string/default_value"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20dp" />
+                                android:textColor="@color/textColor"
+                                android:textSize="25sp" />
                         </RelativeLayout>
 
-                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <LinearLayout
@@ -166,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/past_trips"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/textColor"
                     android:textSize="15dp"
                     android:textStyle="italic"
                     />
@@ -175,7 +201,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/see_all_trips"
-                    android:gravity="right"
+                    android:textColor="@color/textColor"
+                    android:gravity="end"
                     />
             </LinearLayout>
 

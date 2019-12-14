@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class PastTripListAdapter extends RecyclerView.Adapter<PastTripListAdapter.PastTripListViewHolder> {
     Context context;
@@ -32,11 +33,12 @@ public class PastTripListAdapter extends RecyclerView.Adapter<PastTripListAdapte
     @Override
     public void onBindViewHolder(@NonNull PastTripListViewHolder holder, int position) {
         holder.txt_boardingStation.setText(tripDataArrayList.get(position).getBoardingStation());
-        holder.txt_boardingTime.setText(tripDataArrayList.get(position).getBoardingTime());
+        holder.txt_boardingTime.setText(Date(tripDataArrayList.get(position).getBoardingTime()));
         holder.txt_departureStation.setText(tripDataArrayList.get(position).getDepartureStation());
-        holder.txt_departureTime.setText(tripDataArrayList.get(position).getDepartureTime());
+        holder.txt_departureTime.setText(Date(tripDataArrayList.get(position).getDepartureTime()));
+        holder.txt_currencyType.setText(tripDataArrayList.get(position).getCurrencyType());
         holder.txt_tripCost.setText(tripDataArrayList.get(position).getTripCost());
-        holder.txt_travelTime.setText(tripDataArrayList.get(position).getTravelTime());
+        holder.txt_travelTime.setText(tripDataArrayList.get(position).getTravelTime()+" mins");
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +53,7 @@ public class PastTripListAdapter extends RecyclerView.Adapter<PastTripListAdapte
     }
 
     public class PastTripListViewHolder extends RecyclerView.ViewHolder{
-        TextView txt_departureStation,txt_departureTime,txt_boardingStation,txt_boardingTime,txt_tripCost,txt_travelTime;
+        TextView txt_departureStation,txt_departureTime,txt_boardingStation,txt_boardingTime,txt_currencyType,txt_tripCost,txt_travelTime;
         LinearLayout parentLayout;
         public PastTripListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,9 +61,17 @@ public class PastTripListAdapter extends RecyclerView.Adapter<PastTripListAdapte
             txt_boardingTime=itemView.findViewById(R.id.boardingTime);
             txt_departureStation=itemView.findViewById(R.id.departureStation);
             txt_departureTime=itemView.findViewById(R.id.departureTime);
+            txt_currencyType=itemView.findViewById(R.id.currencySymbol);
             txt_tripCost=itemView.findViewById(R.id.tripCost);
-            txt_travelTime=itemView.findViewById(R.id.travelTime);
+            txt_travelTime=itemView.findViewById(R.id.travelTimeValue);
             parentLayout=itemView.findViewById(R.id.parentLayout);
         }
+    }
+    public String Date(String milliseconds){
+        long milliSeconds= Long.parseLong(milliseconds);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(milliSeconds);
+        String Date = calendar.getTime().toString();
+        return Date;
     }
 }

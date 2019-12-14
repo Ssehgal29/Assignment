@@ -3,17 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/parentLayout">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -29,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/boarding_station_name"
                 android:textSize="10dp"
+                android:textColor="@color/textColor"
                 android:textStyle="bold"
                 android:layout_toRightOf="@+id/imageView"
                 android:layout_marginTop="10dp"
@@ -39,7 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/boarding_time"
-                android:textSize="5dp"
+                android:textSize="8dp"
+                android:textColor="@color/textColor"
                 android:textStyle="italic"
                 android:layout_toEndOf="@+id/imageView"
                 android:layout_marginLeft="10dp"
@@ -51,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/departure_station_name"
                 android:textSize="10dp"
+                android:textColor="@color/textColor"
                 android:textStyle="bold"
                 android:layout_toRightOf="@+id/imageView"
                 android:layout_marginTop="45dp"
@@ -61,7 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/departure_time"
-                android:textSize="5dp"
+                android:textSize="8dp"
+                android:textColor="@color/textColor"
                 android:textStyle="italic"
                 android:layout_toEndOf="@+id/imageView"
                 android:layout_marginLeft="10dp"
@@ -71,13 +78,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/total_amount"
-                android:textSize="5dp"
+                android:textSize="8dp"
+                android:textColor="@color/textColor"
                 android:textStyle="italic"
                 android:layout_marginTop="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:gravity="right"
                 />
+
+            <TextView
+                android:id="@+id/currencySymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tripCost"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="44dp"
+                android:text="@string/currency_type"
+                android:textColor="@color/textColor"
+                android:textSize="10sp" />
             <TextView
                 android:id="@+id/tripCost"
                 android:layout_width="wrap_content"
@@ -87,19 +106,35 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/travel_amount"
                 android:textSize="25dp"
+                android:textColor="@color/textColor"
                 android:textStyle="bold"
                 />
+
             <TextView
                 android:id="@+id/travelTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:textSize="5dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/travelTimeValue"
+                android:text="@string/travel_time"
+                android:textColor="@color/textColor"
+                android:textSize="8dp"
+                android:textStyle="italic" />
+            <TextView
+                android:id="@+id/travelTimeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="8dp"
+                android:textColor="@color/textColor"
                 android:textStyle="italic"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="60dp"
-                android:text="@string/travel_time"
+                android:text="@string/travel_amount"
                 />
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
