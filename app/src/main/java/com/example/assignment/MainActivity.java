@@ -19,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView pastTrips;
     TextView txt_firstName,txt_lastName,txt_city,txt_country,txt_rides,txt_freeRide,txt_credits;
     ImageView iv_userImage;
+    RequestOptions options;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         setID();
         getData();
         setTitle("My Profile");
+        options=new RequestOptions().centerCrop().placeholder(R.drawable.user).error(R.drawable.user);
     }
 
     @Override
@@ -90,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
                                     jsonObjectCredits.getString("value"))
                             );
                     for (int i=0;i<profileDataArrayList.size();i++){
-//                        iv_userImage.setImageBitmap(getBitmapFromURL(profileDataArrayList.get(i).getUserImage()));
+                        //using glide we'll fetch image
+                        Glide.with(MainActivity.this).load(profileDataArrayList.get(i).getUserImage()).apply(options).into(iv_userImage);
                         txt_firstName.setText(profileDataArrayList.get(i).getUserFirstName());
                         txt_lastName.setText(profileDataArrayList.get(i).getUserLastName());
                         txt_city.setText(profileDataArrayList.get(i).getUserCity()+",");
